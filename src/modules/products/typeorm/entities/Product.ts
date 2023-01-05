@@ -24,7 +24,7 @@ class Product {
   created_at: Date;
 
   @UpdateDateColumn()
-  updated_At: Date;
+  updated_at: Date;
 }
 
 export default Product;
