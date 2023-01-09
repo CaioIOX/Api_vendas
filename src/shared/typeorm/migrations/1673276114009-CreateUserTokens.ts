@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner, Table, Timestamp } from 'typeorm';
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class CreateUserTokens1673276114009 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
