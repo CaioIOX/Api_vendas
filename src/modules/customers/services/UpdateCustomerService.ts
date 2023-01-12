@@ -20,7 +20,7 @@ class UpdateCustomerService {
 
     const customerUpdateEmail = await customersRepository.findByEmail(email);
 
-    if (customerUpdateEmail && customerUpdateEmail.email != email) {
+    if (customerUpdateEmail && customer.email !== email) {
       throw new AppError('Este email já está sendo usado.');
     }
 
