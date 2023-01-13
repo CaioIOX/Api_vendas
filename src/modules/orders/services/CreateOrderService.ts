@@ -35,8 +35,8 @@ class CreateOrderService {
 
     const existsProductsIds = productExists.map(product => product.id);
 
-    const checkInexistentsProducts = products.filter(product =>
-      existsProductsIds.includes(product.id),
+    const checkInexistentsProducts = products.filter(
+      product => !existsProductsIds.includes(product.id),
     );
 
     if (checkInexistentsProducts.length) {
@@ -52,9 +52,7 @@ class CreateOrderService {
     );
 
     if (quantityAvailable.length) {
-      throw new AppError(
-        `A quantidade ${quantityAvailable[0].quantity} não está disponível para ${quantityAvailable[0].id}`,
-      );
+      throw new AppError(`Estoque insuficiente.`);
     }
 
     const serializedProducts = products.map(product => ({
