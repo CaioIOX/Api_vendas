@@ -41,7 +41,7 @@ class CreateOrderService {
 
     if (checkInexistentsProducts.length) {
       throw new AppError(
-        `Não foi possivel encontrar p ´rpduto de id: ${checkInexistentsProducts[0].id}.`,
+        `Não foi possivel encontrar produto de id: ${checkInexistentsProducts[0].id}.`,
       );
     }
 
