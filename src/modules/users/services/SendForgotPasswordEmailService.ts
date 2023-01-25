@@ -1,9 +1,9 @@
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import path from 'path';
-import UsersRepository from '../typeorm/repositories/UsersRepository';
-import UserTokenRepository from '../typeorm/repositories/UserTokensRepository';
 import EtherealMail from '@config/mail/EtherealMail';
+import UserTokenRepository from '../infra/typeorm/repositories/UserTokensRepository';
+import UsersRepository from '../infra/typeorm/repositories/UsersRepository';
 
 interface IRequest {
   email: string;
