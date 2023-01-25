@@ -1,4 +1,5 @@
-import isAuthenticated from '@shared/http/middlewares/isAuthenticated';
+
+import isAuthenticated from '@shared/infra/http/middlewares/isAuthenticated';
 import { celebrate, Joi, Segments } from 'celebrate';
 import { Router } from 'express';
 
