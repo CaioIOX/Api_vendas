@@ -17,7 +17,7 @@ class CreateCustomerService {
       throw new AppError('Este email já está em uso.');
     }
 
-    const customer = customersRepository.create({
+    const customer = await customersRepository.create({
       name,
       email,
     });
