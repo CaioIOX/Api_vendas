@@ -1,4 +1,3 @@
-import Product from '@modules/products/infra/typeorm/entities/Product';
 import {
   Column,
   CreateDateColumn,
@@ -9,9 +8,12 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import Order from './Orders';
+import { IOrderProducts } from '@modules/orders/domain/models/IOrderProducts';
+import { IProduct } from '@modules/products/domain/models/IProduct';
+import Product from '@modules/products/infra/typeorm/entities/Product';
 
 @Entity('orders_products')
-class OrdersProducts {
+class OrdersProducts implements IOrderProducts {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -21,7 +23,7 @@ class OrdersProducts {
 
   @ManyToOne(() => Product, product => product.order_products)
   @JoinColumn({ name: 'product_id' })
-  product: Product;
+  product: IProduct;
 
   @Column()
   order_id: string;
