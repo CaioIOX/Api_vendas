@@ -4,5 +4,5 @@ export interface IOrderPaginate {
   per_page: number;
   total: number;
   current_page: number;
-  date: IOrder[];
+  data: IOrder[];
 }
